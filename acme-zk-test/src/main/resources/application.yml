@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: acme-zk
+  cloud:
+    zookeeper:
+      path: /zk-service
+      connect-string: 127.0.0.1:2181
+server:
+  port: 0
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+logging.level:
+  org.apache.zookeeper.ClientCnxn: ERROR
+  org.apache.curator: DEBUG
+
+management:
+  security:
+    enabled: false
